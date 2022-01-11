@@ -1,0 +1,16 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2020",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "module": "commonjs",
+    "preserveConstEnums": true
+  },
+  "include": [
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

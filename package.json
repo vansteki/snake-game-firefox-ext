@@ -1,0 +1,24 @@
+{
+  "name": "ext-firefox-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background_script.js",
+  "scripts": {
+    "dev": "web-ext run",
+    "dev:ff-dev": "web-ext run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "web-ext": "^4",
+    "prettier": "^2.5.1",
+    "prettier-standard": "^16.4.1"
+  },
+  "engines": {
+    "node": ">= 16.13.1"
+  },
+  "volta": {
+    "node": "16.13.1"
+  },
+  "author": "",
+  "license": "MIT"
+}
