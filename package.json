@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "web-ext -s ./src run",
     "dev:ff-dev": "web-ext -s ./src run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
-    "dev:css": "npx tailwindcss -c src/devtools/game/tailwind.config.js -i src/devtools/game/tailwind-input.css -o ./src/devtools/game/app.css -w",
+    "dev:css": "npx tailwindcss -i src/devtools/game/tailwind-input.css -o ./src/devtools/game/app.css -w",
     "format": "prettier-standard --format",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
