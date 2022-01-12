@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.querySelector('.start')
 
   const width = 10
+  const initialSpeed = 200
   let currentIndex = 0 //so first div in our grid
   let appleIndex = 0 //so first div in our grid
   let currentSnake = [2, 1, 0]
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     randomApple()
     direction = 1
     scoreDisplay.innerText = score
-    intervalTime = 1000
+    intervalTime = initialSpeed
     currentSnake = [2, 1, 0]
     currentIndex = 0
     currentSnake.forEach(index => squares[index].classList.add('snake'))
@@ -82,8 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (e.keyCode === 40) {
       direction = +width //if we press down, the snake head will instantly appear in the div ten divs from where you are now
     }
+
+    if (e.keyCode === 81) {
+      startGame()
+    }
   }
 
-  document.addEventListener('keyup', control)
+  document.addEventListener('keydown', control)
   startBtn.addEventListener('click', startGame)
 })
