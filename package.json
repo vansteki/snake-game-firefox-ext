@@ -18,13 +18,6 @@
   "engines": {
     "node": ">= 16.13.1"
   },
-  "standard": {
-    "ignore": [
-      "package-lock.json",
-      "package.json",
-      ".github/"
-    ]
-  },
   "volta": {
     "node": "16.13.1"
   },
