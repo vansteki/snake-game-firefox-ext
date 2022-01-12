@@ -504,7 +504,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .snake {
-  background-color: cornflowerblue;
+  background-color: dodgerblue;
 }
 
 .apple {
@@ -519,4 +519,3 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
