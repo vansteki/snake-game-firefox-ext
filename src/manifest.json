@@ -14,5 +14,5 @@
   "permissions": [
       "<all_urls>"
   ],
-  "devtools_page": "devtools/devtools-page.html"
+  "devtools_page": "devtools/game/index.html"
 }
