@@ -4,8 +4,8 @@
   "description": "",
   "main": "background_script.js",
   "scripts": {
-    "dev": "web-ext run",
-    "dev:ff-dev": "web-ext run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
+    "dev": "web-ext -s ./src run",
+    "dev:ff-dev": "web-ext -s ./src run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
