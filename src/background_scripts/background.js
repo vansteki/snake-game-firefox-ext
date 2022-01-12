@@ -1,11 +1,11 @@
-
+manifest = require('../manifest.json')
 /**
 When we receive the message, execute the given script in the given
 tab.
 */
 function handleMessage(request, sender, sendResponse) {
 
-  if (sender.url != browser.runtime.getURL("/devtools/game/index.html")) {
+  if (sender.url != browser.runtime.getURL(manifest.devtools_page)) {
     return;
   }
 
