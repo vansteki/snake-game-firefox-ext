@@ -478,16 +478,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(236 72 153 / var(--tw-border-opacity));
 }
 
-.border-amber-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(217 119 6 / var(--tw-border-opacity));
-}
-
-.border-pink-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(219 39 119 / var(--tw-border-opacity));
-}
-
 .bg-gray-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
@@ -514,11 +504,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .snake {
-  background-color: blue;
+  background-color: cornflowerblue;
 }
 
 .apple {
-  background-color: purple;
+  background-color: yellowgreen;
 }
 
 .focus\:decoration-0:focus {
