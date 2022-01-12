@@ -511,6 +511,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: yellowgreen;
 }
 
+.pineapple {
+  background-color: gold;
+}
+
 .focus\:decoration-0:focus {
   text-decoration-thickness: 0px;
 }
