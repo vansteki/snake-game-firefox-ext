@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "web-ext -s ./src run",
     "dev:ff-dev": "web-ext -s ./src run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
+    "dev:css": "npx tailwindcss -c src/devtools/game/tailwind.config.js -i src/devtools/game/tailwind-input.css -o ./src/devtools/game/app.css -w",
+    "format": "prettier-standard --format",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "web-ext": "^4",
+  "devDependencies": {
     "prettier": "^2.5.1",
-    "prettier-standard": "^16.4.1"
+    "prettier-standard": "^16.4.1",
+    "tailwindcss": "3.0.7",
+    "web-ext": "^4"
   },
   "engines": {
     "node": ">= 16.13.1"
