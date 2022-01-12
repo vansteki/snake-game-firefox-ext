@@ -1,12 +1,3 @@
-browser.devtools.panels.create(
-  "My Panel",
-  "/icons/star.png",
-  "/devtools/game/index.html"
-).then((newPanel) => {
-  newPanel.onShown.addListener(handleShown);
-  newPanel.onHidden.addListener(handleHidden);
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const squares = document.querySelectorAll('.grid div')
   const scoreDisplay = document.querySelector('span')
