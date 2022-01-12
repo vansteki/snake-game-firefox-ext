@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.tile {
-  width: 200px;
-  height: 200px;
-}
+/*.tile {*/
+/*  width: 200px;*/
+/*  height: 200px;*/
+/*}*/
 
 .tile div {
   width: 20px;

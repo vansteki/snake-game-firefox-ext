@@ -444,6 +444,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -487,15 +495,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .text-green-400 {
   --tw-text-opacity: 1;
   color: rgb(74 222 128 / var(--tw-text-opacity));
 }
 
-.tile {
-  width: 200px;
-  height: 200px;
-}
+/*.tile {*/
+
+/*  width: 200px;*/
+
+/*  height: 200px;*/
+
+/*}*/
 
 .tile div {
   width: 20px;

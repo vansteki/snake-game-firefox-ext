@@ -1,9 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const map = document.querySelector('#map')
+  const tileNumbers = 100
+  const width = Math.floor(document.body.offsetWidth / 20)
+  for (let i = 1; i <= tileNumbers; i++) {
+    const div = document.createElement('div', {'class':'tile'} )
+    map.appendChild(div)
+  }
+
   const squares = document.querySelectorAll('.tile div')
   const scoreDisplay = document.querySelector('span')
   const startBtn = document.querySelector('.start')
 
-  const width = 10
   const initialSpeed = 500
   let currentIndex = 0 //so first div in our grid
   let appleIndex = 0 //so first div in our grid
@@ -15,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let pineAppleSpeed = 0.5
   let intervalTime = 0
   let interval = 0
+
 
   //to start, and restart the game
   function startGame () {
