@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSnake = [2, 1, 0]
   let direction = 1
   let score = 0
-  let speed = 0.9
+  let appleSpeed = 0.9
+  let pineAppleSpeed = 0.5
   let intervalTime = 0
   let interval = 0
 
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //function that deals with ALL the ove outcomes of the Snake
   function moveOutcomes () {
     //deals with snake hitting border and snake hitting self
+    console.log(squares)
     if (
       (currentSnake[0] + width >= width * width && direction === width) || //if snake hits bottom
       (currentSnake[0] % width === width - 1 && direction === 1) || //if snake hits right wall
@@ -54,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //deals with snake getting apple
     if (squares[currentSnake[0]].classList.contains('apple')) {
-      whenEat('apple', 1, 1)
+      whenEat('apple', 1, appleSpeed)
     } else if (squares[currentSnake[0]].classList.contains('pineapple')) {
-      whenEat('pineapple', 10, 0.5)
+      whenEat('pineapple', 10, pineAppleSpeed)
     }
     squares[currentSnake[0]].classList.add('snake')
 
