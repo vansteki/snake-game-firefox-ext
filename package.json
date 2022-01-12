@@ -8,10 +8,11 @@
     "dev:ff-dev": "web-ext -s ./src run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "web-ext": "^4",
+  "devDependencies": {
     "prettier": "^2.5.1",
-    "prettier-standard": "^16.4.1"
+    "prettier-standard": "^16.4.1",
+    "tailwindcss": "^3.0.13",
+    "web-ext": "^4"
   },
   "engines": {
     "node": ">= 16.13.1"
