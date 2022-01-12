@@ -2,23 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.grid {
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    border-style: solid;
+.tile {
+  width: 200px;
+  height: 200px;
 }
 
-.grid div {
-    width: 20px;
-    height: 20px;
+.tile div {
+  width: 20px;
+  height: 20px;
+  border: 1px solid darkolivegreen;
 }
 
 .snake {
-    background-color: blue;
+  background-color: blue;
 }
 
 .apple {
-    background-color: purple;
+  background-color: purple;
 }
+
