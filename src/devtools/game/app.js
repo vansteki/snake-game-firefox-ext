@@ -54,27 +54,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //deals with snake getting apple
     if (squares[currentSnake[0]].classList.contains('apple')) {
-      squares[currentSnake[0]].classList.remove('apple')
-      squares[tail].classList.add('snake')
-      currentSnake.push(tail)
-      randomApple()
-      score++
-      scoreDisplay.textContent = score
-      clearInterval(interval)
-      intervalTime = intervalTime * speed
-      interval = setInterval(moveOutcomes, intervalTime)
+      whenEat('apple', 1, 1)
     } else if (squares[currentSnake[0]].classList.contains('pineapple')) {
-      squares[currentSnake[0]].classList.remove('pineapple')
-      squares[tail].classList.add('snake')
-      currentSnake.push(tail)
-      randomPineApple()
-      score = score + 10
-      scoreDisplay.textContent = score
-      clearInterval(interval)
-      intervalTime = intervalTime * speed * 0.5
-      interval = setInterval(moveOutcomes, intervalTime)
+      whenEat('pineapple', 10, 0.5)
     }
     squares[currentSnake[0]].classList.add('snake')
+
+    function whenEat (fruit, scoreAdded, speedAdded) {
+      squares[currentSnake[0]].classList.remove(fruit)
+      squares[tail].classList.add('snake')
+      currentSnake.push(tail)
+      if (fruit === 'apple') {
+        randomApple()
+      } else {
+        randomPineApple()
+      }
+      score = score + scoreAdded
+      scoreDisplay.textContent = score
+      clearInterval(interval)
+      intervalTime = intervalTime * speedAdded
+      interval = setInterval(moveOutcomes, intervalTime)
+    }
   }
 
   //generate new apple once apple is eaten
