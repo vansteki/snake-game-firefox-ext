@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // row number of each tile based on screen width
   const tileRowNumbers = Math.floor(document.body.clientWidth / tileWH)
   // generate 1/5 of screen height of column tiles
-  const tileColNumbers = Math.floor((window.screen.availHeight / (tileWH * 5) ))
+  const tileColNumbers = Math.floor((window.screen.availHeight / (tileWH * 5)))
   // width is move offset aka square of each line
   const width = Math.floor(document.body.offsetWidth / tileWH)
 
   for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
-    const div = document.createElement('div', {'class':'tile'} )
+    const div = document.createElement('div', { 'class': 'tile' })
     div.style.width = tileWH + 'px'
     div.style.height = tileWH + 'px'
     map.appendChild(div)
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let pineAppleSpeed = 0.5
   let intervalTime = 0
   let interval = 0
-
 
   //to start, and restart the game
   function startGame () {
@@ -138,4 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', control)
   startBtn.addEventListener('click', startGame)
+  window.onresize = function () {
+    setTimeout(() => {
+      location.reload()
+    }, 100)
+  }
 })
+
