@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   const map = document.querySelector('#map')
-  const tileWH = 20
+  const tileSize = 20
   // row number of each tile based on screen width
-  const tileRowNumbers = Math.floor((document.body.offsetWidth) / tileWH)
+  const tileRowNumbers = Math.floor((document.body.offsetWidth) / tileSize)
   // generate 1/5 of screen height of column tiles
-  const tileColNumbers = Math.floor((window.screen.availHeight / (tileWH * 5)))
+  const tileColNumbers = Math.floor((window.screen.availHeight / (tileSize * 5)))
   // width is move offset aka square of each line
-  const width = Math.floor((document.body.offsetWidth) / tileWH)
+  const width = Math.floor((document.body.offsetWidth) / tileSize)
 
   for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
     const div = document.createElement('div', { 'class': 'tile' })
-    div.style.width = tileWH + 'px'
-    div.style.height = tileWH + 'px'
+    div.style.width = tileSize + 'px'
+    div.style.height = tileSize + 'px'
     map.appendChild(div)
   }
 
