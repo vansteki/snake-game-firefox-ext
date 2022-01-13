@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const map = document.querySelector('#map')
   const tileSize = 20
   // row number of each tile based on screen width
-  const tileRowNumbers = Math.floor((document.body.offsetWidth) / tileSize)
+  const tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
   // generate 1/5 of screen height of column tiles
-  const tileColNumbers = Math.floor((window.screen.availHeight / (tileSize * 5)))
+  const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
   // width is move offset aka square of each line
-  const width = Math.floor((document.body.offsetWidth) / tileSize)
+  const width = Math.floor(document.body.offsetWidth / tileSize)
 
   for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
-    const div = document.createElement('div', { 'class': 'tile' })
+    const div = document.createElement('div', { class: 'tile' })
     div.style.width = tileSize + 'px'
     div.style.height = tileSize + 'px'
     map.appendChild(div)
@@ -99,7 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
     do {
       appleIndex = Math.floor(Math.random() * squares.length)
     } while (squares[appleIndex].classList.contains('snake'))
-    { //making sure apples dont appear on the snake
+    {
+      //making sure apples dont appear on the snake
       squares[appleIndex].classList.add('apple')
     }
   }
@@ -107,10 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function randomPineApple () {
     do {
       pineAppleIndex = Math.floor(Math.random() * squares.length)
-    } while (
-      squares[pineAppleIndex].classList.contains('snake') &&
-      squares[pineAppleIndex].classList.contains('apple')
-      )
+    } while (squares[pineAppleIndex].classList.contains('snake') && squares[pineAppleIndex].classList.contains('apple'))
     {
       squares[pineAppleIndex].classList.add('pineapple')
     }
@@ -143,4 +141,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100)
   }
 })
-
