@@ -1,8 +1,7 @@
 {
   "name": "ext-firefox-ts",
   "version": "1.0.0",
-  "description": "",
-  "main": "background_script.js",
+  "description": "Snake game in Firefox devtools panel",
   "scripts": {
     "dev": "web-ext -s ./src run",
     "dev:ff-dev": "web-ext -s ./src run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
@@ -22,6 +21,6 @@
   "volta": {
     "node": "16.13.1"
   },
-  "author": "",
+  "author": "vansteki",
   "license": "MIT"
 }
