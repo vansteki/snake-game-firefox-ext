@@ -1,4 +1,4 @@
-# Snake game in Firefox devtool panel 🦊🔬🐍
+# Snake game in Firefox devtools panel 🦊🔬🐍
 
 Play snake game in devtools panel
 
