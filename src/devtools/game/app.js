@@ -1,17 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   const map = document.querySelector('#map')
-  const tileNumbers = 100
-  const width = Math.floor(document.body.offsetWidth / 20)
-  for (let i = 1; i <= tileNumbers; i++) {
+  const tileWH = 20
+  // row number of each tile based on screen width
+  const tileRowNumbers = Math.floor(document.body.clientWidth / tileWH)
+  // generate 1/5 of screen height of column tiles
+  const tileColNumbers = Math.floor((window.screen.availHeight / (tileWH * 5) ))
+  // width is move offset aka square of each line
+  const width = Math.floor(document.body.offsetWidth / tileWH)
+
+  for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
     const div = document.createElement('div', {'class':'tile'} )
+    div.style.width = tileWH + 'px'
+    div.style.height = tileWH + 'px'
     map.appendChild(div)
   }
 
   const squares = document.querySelectorAll('.tile div')
   const scoreDisplay = document.querySelector('span')
   const startBtn = document.querySelector('.start')
+  const initialSpeed = 200
 
-  const initialSpeed = 500
   let currentIndex = 0 //so first div in our grid
   let appleIndex = 0 //so first div in our grid
   let pineAppleIndex = 0
