@@ -1,4 +1,40 @@
-# Snake game in Firefox devtool panel
+# Snake game in Firefox devtool panel 🦊🔬🐍
+
+Play snake game in devtools panel
+
+The game is based on [kubowania/Nokia3310-Snake](https://github.com/kubowania/Nokia3310-Snake) but has other features and modifications:
+
+- Add pineapple to speed 50% up of the snake 🍍
+- Re-generate map tiles based on screen size (offsetWidth) 🗺
+- Integrate game into Firefox extension (devtools panel) 🦊
+- Use TailwindCSS
+
+screenshot:
+
+<img src="./screenshots/screenshot1.png" width="75%" alt="screenshot">
+
+
+## Usage
+### install dependencies
+```
+npm i
+```
+
+### dev
+
+dev and preview in Firefox browser
+```
+npm run dev
+```
+or
+```
+npx web-ext -s ./src run
+```
+
+dev with TailwindCSS
+```
+npm run dev:css
+```
 
 # Ref
 
