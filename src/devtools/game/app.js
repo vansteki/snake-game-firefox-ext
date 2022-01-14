@@ -20,14 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const map = document.querySelector('#map')
     let tileSize = 20
     // row number of each tile based on screen width
-    const isTilesOverflow = scrollbarVisible()
-
     let tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
 
     // generate 1/5 of screen height of column tiles
     const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
-
-
 
     // width is move offset aka square of each line
     let width = Math.floor(document.body.offsetWidth / tileSize)
@@ -38,25 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
       div.style.height = tileSize + 'px'
       map.appendChild(div)
     }
+    const isTilesOverflow = scrollbarVisible()
 
     if (isTilesOverflow) {
       console.log(document.body.offsetWidth % tileSize)
-      let t = tileSize
       let rm = tileColNumbers
-      let notEnough = true
       for (rm; rm > 0; rm--) {
         map.removeChild(map.lastElementChild)
       }
-      width = width - rm
-      // for loop tileSize-- until document.body.offsetWidth % tileSize  === 0
-      // for (let i = 100; notEnough; i--) {
-      // t--
-      // if (document.body.offsetWidth % tileSize === 0) {
-      //   notEnough = false
-      //   tileSize = t
-      //   tileRowNumbers = document.body.offsetWidth / tileSize
-      // }
-      // }
+      // snake move width should -1 because map column - 1
+      width = width - 1
     }
 
     return {
