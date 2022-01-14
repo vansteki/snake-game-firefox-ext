@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const { width } = genMap()
   const squares = document.querySelectorAll('.tile div')
   const scoreDisplay = document.querySelector('span')
   const startBtn = document.querySelector('.start')
+  const initialSpeed = 100
 
-  const width = 10
-  const initialSpeed = 500
   let currentIndex = 0 //so first div in our grid
   let appleIndex = 0 //so first div in our grid
   let pineAppleIndex = 0
@@ -15,6 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
   let pineAppleSpeed = 0.5
   let intervalTime = 0
   let interval = 0
+
+  function genMap () {
+    const map = document.querySelector('#map')
+    const tileSize = 20
+    // row number of each tile based on screen width
+    const tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
+    // generate 1/5 of screen height of column tiles
+    const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
+    // width is move offset aka square of each line
+    const width = Math.floor(document.body.offsetWidth / tileSize)
+
+    for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
+      const div = document.createElement('div', { class: 'tile' })
+      div.style.width = tileSize + 'px'
+      div.style.height = tileSize + 'px'
+      map.appendChild(div)
+    }
+    return {
+      map,
+      width
+    }
+  }
 
   //to start, and restart the game
   function startGame () {
@@ -41,10 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //deals with snake hitting border and snake hitting self
     console.log(squares)
     if (
-      (currentSnake[0] + width >= width * width && direction === width) || //if snake hits bottom
-      (currentSnake[0] % width === width - 1 && direction === 1) || //if snake hits right wall
-      (currentSnake[0] % width === 0 && direction === -1) || //if snake hits left wall
-      (currentSnake[0] - width < 0 && direction === -width) || //if snake hits the top
+      (currentSnake[0] + width >= width * width && direction === width) || // bottom border collision
+      (currentSnake[0] % width === width - 1 && direction === 1) || // right border collision
+      (currentSnake[0] % width === 0 && direction === -1) || //if left border collision
+      (currentSnake[0] - width < 0 && direction === -width) || // top border collision
       squares[currentSnake[0] + direction].classList.contains('snake') //if snake goes into itself
     ) {
       return clearInterval(interval) //this will clear the interval if any of the above happen
@@ -84,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
     do {
       appleIndex = Math.floor(Math.random() * squares.length)
     } while (squares[appleIndex].classList.contains('snake'))
-    { //making sure apples dont appear on the snake
+    {
+      //making sure apples dont appear on the snake
       squares[appleIndex].classList.add('apple')
     }
   }
@@ -92,10 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function randomPineApple () {
     do {
       pineAppleIndex = Math.floor(Math.random() * squares.length)
-    } while (
-      squares[pineAppleIndex].classList.contains('snake') &&
-      squares[pineAppleIndex].classList.contains('apple')
-      )
+    } while (squares[pineAppleIndex].classList.contains('snake') && squares[pineAppleIndex].classList.contains('apple'))
     {
       squares[pineAppleIndex].classList.add('pineapple')
     }
@@ -106,13 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
     squares[currentIndex].classList.remove('snake')
 
     if (e.keyCode === 39) {
-      direction = 1 //if we press the right arrow on our keyboard, the snake will go right one
+      direction = 1 // right
     } else if (e.keyCode === 38) {
-      direction = -width // if we press the up arrow, the snake will go back ten divs, appearing to go up
+      direction = -width // up
     } else if (e.keyCode === 37) {
-      direction = -1 // if we press left, the snake will go left one div
+      direction = -1 // left
     } else if (e.keyCode === 40) {
-      direction = +width //if we press down, the snake head will instantly appear in the div ten divs from where you are now
+      direction = +width // down
     }
 
     if (e.keyCode === 81) {
@@ -122,4 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', control)
   startBtn.addEventListener('click', startGame)
+  window.onresize = function () {
+    setTimeout(() => {
+      location.reload()
+    }, 100)
+  }
 })
