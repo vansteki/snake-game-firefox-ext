@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const { width } = genMap()
+  const squares = document.querySelectorAll('.tile div')
+  const scoreDisplay = document.querySelector('span')
+  const startBtn = document.querySelector('.start')
+  const initialSpeed = 100
+
+  let currentIndex = 0 //so first div in our grid
+  let appleIndex = 0 //so first div in our grid
+  let pineAppleIndex = 0
+  let currentSnake = [2, 1, 0]
+  let direction = 1
+  let score = 0
+  let appleSpeed = 0.9
+  let pineAppleSpeed = 0.5
+  let intervalTime = 0
+  let interval = 0
 
   function genMap () {
     const map = document.querySelector('#map')
@@ -21,24 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
       width
     }
   }
-
-  let { width } = genMap()
-
-  const squares = document.querySelectorAll('.tile div')
-  const scoreDisplay = document.querySelector('span')
-  const startBtn = document.querySelector('.start')
-  const initialSpeed = 100
-
-  let currentIndex = 0 //so first div in our grid
-  let appleIndex = 0 //so first div in our grid
-  let pineAppleIndex = 0
-  let currentSnake = [2, 1, 0]
-  let direction = 1
-  let score = 0
-  let appleSpeed = 0.9
-  let pineAppleSpeed = 0.5
-  let intervalTime = 0
-  let interval = 0
 
   //to start, and restart the game
   function startGame () {
