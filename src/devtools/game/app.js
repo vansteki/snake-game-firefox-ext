@@ -18,13 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function genMap () {
     const map = document.querySelector('#map')
-    const tileSize = 20
+    let tileSize = 20
     // row number of each tile based on screen width
-    const tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
+    const isTilesOverflow = scrollbarVisible()
+
+    let tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
+
     // generate 1/5 of screen height of column tiles
     const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
+
+
+
     // width is move offset aka square of each line
-    const width = Math.floor(document.body.offsetWidth / tileSize)
+    let width = Math.floor(document.body.offsetWidth / tileSize)
 
     for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
       const div = document.createElement('div', { class: 'tile' })
@@ -32,10 +38,36 @@ document.addEventListener('DOMContentLoaded', () => {
       div.style.height = tileSize + 'px'
       map.appendChild(div)
     }
+
+    if (isTilesOverflow) {
+      console.log(document.body.offsetWidth % tileSize)
+      let t = tileSize
+      let rm = tileColNumbers
+      let notEnough = true
+      for (rm; rm > 0; rm--) {
+        map.removeChild(map.lastElementChild)
+      }
+      width = width - rm
+      // for loop tileSize-- until document.body.offsetWidth % tileSize  === 0
+      // for (let i = 100; notEnough; i--) {
+      // t--
+      // if (document.body.offsetWidth % tileSize === 0) {
+      //   notEnough = false
+      //   tileSize = t
+      //   tileRowNumbers = document.body.offsetWidth / tileSize
+      // }
+      // }
+    }
+
     return {
       map,
       width
     }
+  }
+
+  function scrollbarVisible(element) {
+    // return element.scrollHeight > element.clientHeight;
+    return window.scrollMaxY > 0
   }
 
   //to start, and restart the game
