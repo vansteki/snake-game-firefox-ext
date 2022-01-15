@@ -8,6 +8,7 @@ on:
     branches:
       - main
       - dev/ci
+      - dev/next
       - release/*
       - feat/*
   pull_request:
