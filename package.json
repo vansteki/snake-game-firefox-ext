@@ -13,8 +13,6 @@
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
     "@tsconfig/node16": "^1.0.2",
-    "babel-jest": "^27.4.6",
-    "jest": "^27.4.7",
     "prettier": "^2.5.1",
     "prettier-standard": "^16.4.1",
     "tailwindcss": "3.0.7",
