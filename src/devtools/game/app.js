@@ -90,11 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
       squares[currentSnake[0]].classList.remove(fruit)
       squares[tail].classList.add('snake')
       currentSnake.push(tail)
+
       if (fruit === 'apple') {
         randomApple()
       } else {
         randomPineApple()
       }
+
       score = score + scoreAdded
       scoreDisplay.textContent = score
       clearInterval(interval)
