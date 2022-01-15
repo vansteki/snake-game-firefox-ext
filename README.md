@@ -1,4 +1,13 @@
+
 # Snake game in Firefox devtools panel 🦊🔬🐍
+<p>
+<a href="https://github.com/vansteki/snake-game-firefox-ext/actions">
+  <img src="https://img.shields.io/github/workflow/status/vansteki/snake-game-firefox-ext/CI?style=for-the-badge" alt="">
+</a>
+<a href="">
+  <img src="https://img.shields.io/github/license/vansteki/snake-game-firefox-ext?style=for-the-badge" alt="">
+</a>
+</p>
 
 Play snake game in devtools panel
 
@@ -7,7 +16,7 @@ The the game is based on [kubowania/Nokia3310-Snake](https://github.com/kubowani
 - Add pineapples to speed 50% up of the snake 🍍
 - Re-generate map tiles based on screen size (offsetWidth) 🗺
 - Integrate game into Firefox extension (devtools panel) 🦊
-- Use TailwindCSS
+- Use Tailwind CSS
 
 screenshot:
 
