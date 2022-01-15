@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "test",
-  "description": "test",
+  "name": "snake-game-firefox-ext",
+  "description": "Play the snake game in devtools panel",
   "version": "1.0",
   "author": "vansteki",
   "homepage_url": "https://github.com/vansteki/snake-game-firefox-ext/",
