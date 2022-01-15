@@ -34,27 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
       div.style.height = tileSize + 'px'
       map.appendChild(div)
     }
-    const isTilesOverflow = scrollbarVisible()
-
-    if (isTilesOverflow) {
-      console.log(document.body.offsetWidth % tileSize)
-      let rm = tileColNumbers
-      for (rm; rm > 0; rm--) {
-        map.removeChild(map.lastElementChild)
-      }
-      // snake move width should -1 because map column - 1
-      width = width - 1
-    }
-
     return {
       map,
       width
     }
-  }
-
-  function scrollbarVisible(element) {
-    // return element.scrollHeight > element.clientHeight;
-    return window.scrollMaxY > 0
   }
 
   //to start, and restart the game
