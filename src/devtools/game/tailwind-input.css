@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.tile {
-  width: 200px;
-  height: 200px;
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .tile div {
-  width: 20px;
-  height: 20px;
   border: 1px solid darkolivegreen;
 }
 
@@ -19,4 +17,8 @@
 
 .apple {
   background-color: yellowgreen;
+}
+
+.pineapple {
+  background-color: gold;
 }

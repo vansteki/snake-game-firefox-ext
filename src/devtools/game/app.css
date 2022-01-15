@@ -444,6 +444,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -492,14 +500,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(74 222 128 / var(--tw-text-opacity));
 }
 
-.tile {
-  width: 200px;
-  height: 200px;
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .tile div {
-  width: 20px;
-  height: 20px;
   border: 1px solid darkolivegreen;
 }
 
@@ -509,6 +515,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .apple {
   background-color: yellowgreen;
+}
+
+.pineapple {
+  background-color: gold;
 }
 
 .focus\:decoration-0:focus {
