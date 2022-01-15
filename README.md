@@ -2,7 +2,7 @@
 
 Play snake game in devtools panel
 
-The game is based on [kubowania/Nokia3310-Snake](https://github.com/kubowania/Nokia3310-Snake) but has other features and modifications:
+The the game is based on [kubowania/Nokia3310-Snake](https://github.com/kubowania/Nokia3310-Snake) but has other features and modifications:
 
 - Add pineapples to speed 50% up of the snake 🍍
 - Re-generate map tiles based on screen size (offsetWidth) 🗺
