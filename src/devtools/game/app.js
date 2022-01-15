@@ -18,13 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function genMap () {
     const map = document.querySelector('#map')
-    const tileSize = 20
+    let tileSize = 20
     // row number of each tile based on screen width
-    const tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
+    let tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
+
     // generate 1/5 of screen height of column tiles
     const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
+
     // width is move offset aka square of each line
-    const width = Math.floor(document.body.offsetWidth / tileSize)
+    let width = Math.floor(document.body.offsetWidth / tileSize)
 
     for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
       const div = document.createElement('div', { class: 'tile' })
