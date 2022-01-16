@@ -82,7 +82,6 @@ function initGame () {
   //function that deals with ALL the ove outcomes of the Snake
   function moveOutcomes () {
     //deals with snake hitting border and snake hitting self
-    console.log(squares)
     if (
       (currentSnake[0] + width >= width * width && direction === width) || // bottom border collision
       (currentSnake[0] % width === width - 1 && direction === 1) || // right border collision
