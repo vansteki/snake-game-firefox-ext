@@ -18,7 +18,7 @@ function genMap (mapEl) {
   }
   return {
     map,
-    width
+    moveWidth: width
   }
 }
 
@@ -42,7 +42,7 @@ function randomPineApple (pineAppleIndex, squares) {
 }
 
 function initGame () {
-  const { width } = genMap('#map')
+  const { moveWidth } = genMap('#map')
   const squares = document.querySelectorAll('.tile div')
   const scoreDisplay = document.querySelector('span')
   const startBtn = document.querySelector('.start')
@@ -83,10 +83,10 @@ function initGame () {
   function moveOutcomes () {
     //deals with snake hitting border and snake hitting self
     if (
-      (currentSnake[0] + width >= width * width && direction === width) || // bottom border collision
-      (currentSnake[0] % width === width - 1 && direction === 1) || // right border collision
-      (currentSnake[0] % width === 0 && direction === -1) || //if left border collision
-      (currentSnake[0] - width < 0 && direction === -width) || // top border collision
+      (currentSnake[0] + moveWidth >= moveWidth * moveWidth && direction === moveWidth) || // bottom border collision
+      (currentSnake[0] % moveWidth === moveWidth - 1 && direction === 1) || // right border collision
+      (currentSnake[0] % moveWidth === 0 && direction === -1) || //if left border collision
+      (currentSnake[0] - moveWidth < 0 && direction === -moveWidth) || // top border collision
       squares[currentSnake[0] + direction].classList.contains('snake') //if snake goes into itself
     ) {
       return clearInterval(interval) //this will clear the interval if any of the above happen
@@ -130,11 +130,11 @@ function initGame () {
     if (e.keyCode === 39) {
       direction = 1 // right
     } else if (e.keyCode === 38) {
-      direction = -width // up
+      direction = -moveWidth // up
     } else if (e.keyCode === 37) {
       direction = -1 // left
     } else if (e.keyCode === 40) {
-      direction = +width // down
+      direction = +moveWidth // down
     }
 
     if (e.keyCode === 81) {
