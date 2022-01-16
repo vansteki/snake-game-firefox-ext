@@ -8,7 +8,7 @@ function genMap (mapEl) {
   const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
 
   // width is move offset aka square of each line
-  let width = Math.floor(document.body.offsetWidth / tileSize)
+  let moveWidth = Math.floor(document.body.offsetWidth / tileSize)
 
   for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
     const div = document.createElement('div', { class: 'tile' })
@@ -18,7 +18,7 @@ function genMap (mapEl) {
   }
   return {
     map,
-    moveWidth: width
+    moveWidth
   }
 }
 
