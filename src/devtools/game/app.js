@@ -1,5 +1,30 @@
+function genMap (mapEl) {
+  const map = document.querySelector(mapEl)
+  let tileSize = 20
+  // row number of each tile based on screen width
+  let tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
+
+  // generate 1/5 of screen height of column tiles
+  const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
+
+  // width is move offset aka square of each line
+  let width = Math.floor(document.body.offsetWidth / tileSize)
+
+  for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
+    const div = document.createElement('div', { class: 'tile' })
+    div.style.width = tileSize + 'px'
+    div.style.height = tileSize + 'px'
+    map.appendChild(div)
+  }
+  return {
+    map,
+    width
+  }
+}
+
+
 function initGame () {
-  const { width } = genMap()
+  const { width } = genMap('#map')
   const squares = document.querySelectorAll('.tile div')
   const scoreDisplay = document.querySelector('span')
   const startBtn = document.querySelector('.start')
@@ -16,29 +41,6 @@ function initGame () {
   let intervalTime = 0
   let interval = 0
 
-  function genMap () {
-    const map = document.querySelector('#map')
-    let tileSize = 20
-    // row number of each tile based on screen width
-    let tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
-
-    // generate 1/5 of screen height of column tiles
-    const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
-
-    // width is move offset aka square of each line
-    let width = Math.floor(document.body.offsetWidth / tileSize)
-
-    for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
-      const div = document.createElement('div', { class: 'tile' })
-      div.style.width = tileSize + 'px'
-      div.style.height = tileSize + 'px'
-      map.appendChild(div)
-    }
-    return {
-      map,
-      width
-    }
-  }
 
   //to start, and restart the game
   function startGame () {
