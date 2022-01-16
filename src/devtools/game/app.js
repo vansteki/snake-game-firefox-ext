@@ -22,6 +22,24 @@ function genMap (mapEl) {
   }
 }
 
+function randomApple (appleIndex, squares) {
+  do {
+    appleIndex = Math.floor(Math.random() * squares.length)
+  } while (squares[appleIndex].classList.contains('snake'))
+  {
+    //making sure apples dont appear on the snake
+    squares[appleIndex].classList.add('apple')
+  }
+}
+
+function randomPineApple (pineAppleIndex, squares) {
+  do {
+    pineAppleIndex = Math.floor(Math.random() * squares.length)
+  } while (squares[pineAppleIndex].classList.contains('snake') && squares[pineAppleIndex].classList.contains('apple'))
+  {
+    squares[pineAppleIndex].classList.add('pineapple')
+  }
+}
 
 function initGame () {
   const { width } = genMap('#map')
@@ -41,7 +59,6 @@ function initGame () {
   let intervalTime = 0
   let interval = 0
 
-
   //to start, and restart the game
   function startGame () {
     currentSnake.forEach(index => squares[index].classList.remove('snake'))
@@ -51,8 +68,8 @@ function initGame () {
     })
     clearInterval(interval)
     score = 0
-    randomApple()
-    randomPineApple()
+    randomApple(appleIndex, squares)
+    randomPineApple(pineAppleIndex, squares)
     direction = 1
     scoreDisplay.innerText = score
     intervalTime = initialSpeed
@@ -92,36 +109,18 @@ function initGame () {
       squares[currentSnake[0]].classList.remove(fruit)
       squares[tail].classList.add('snake')
       currentSnake.push(tail)
+
       if (fruit === 'apple') {
-        randomApple()
+        randomApple(appleIndex, squares)
       } else {
-        randomPineApple()
+        randomPineApple(pineAppleIndex, squares)
       }
+
       score = score + scoreAdded
       scoreDisplay.textContent = score
       clearInterval(interval)
       intervalTime = intervalTime * speedAdded
       interval = setInterval(moveOutcomes, intervalTime)
-    }
-  }
-
-  //generate new apple once apple is eaten
-  function randomApple () {
-    do {
-      appleIndex = Math.floor(Math.random() * squares.length)
-    } while (squares[appleIndex].classList.contains('snake'))
-    {
-      //making sure apples dont appear on the snake
-      squares[appleIndex].classList.add('apple')
-    }
-  }
-
-  function randomPineApple () {
-    do {
-      pineAppleIndex = Math.floor(Math.random() * squares.length)
-    } while (squares[pineAppleIndex].classList.contains('snake') && squares[pineAppleIndex].classList.contains('apple'))
-    {
-      squares[pineAppleIndex].classList.add('pineapple')
     }
   }
 
