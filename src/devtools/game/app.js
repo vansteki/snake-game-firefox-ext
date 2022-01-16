@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initGame () {
   const { width } = genMap()
   const squares = document.querySelectorAll('.tile div')
   const scoreDisplay = document.querySelector('span')
@@ -149,4 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
       location.reload()
     }, 100)
   }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initGame()
 })
