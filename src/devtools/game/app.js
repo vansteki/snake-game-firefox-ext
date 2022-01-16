@@ -143,13 +143,15 @@ function initGame () {
     }
   }
 
-  document.addEventListener('keydown', control)
-  startBtn.addEventListener('click', startGame)
+  // re-load game when screen resize for regenerate map
   window.onresize = function () {
     setTimeout(() => {
       location.reload()
     }, 100)
   }
+
+  document.addEventListener('keydown', control)
+  startBtn.addEventListener('click', startGame)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
