@@ -5,12 +5,13 @@
     "lib": [
       "DOM"
     ],
-    "outDir": "./src/game",
-    "rootDir": "./src/game",
+    "outDir": "./src/devtools/game",
+    "rootDir": "./src/devtools/game",
     "module": "commonjs",
     "preserveConstEnums": true
   },
   "include": [
+    "src/devtools/game/*",
     "test/**/*"
   ],
   "exclude": [

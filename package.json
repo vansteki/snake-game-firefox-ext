@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Snake game in Firefox devtools panel",
   "scripts": {
+    "ts": "tsc",
     "dev": "web-ext -s ./src run",
     "dev:ff-dev": "web-ext -s ./src run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
     "dev:css": "npx tailwindcss -i src/devtools/game/tailwind-input.css -o ./src/devtools/game/app.css -w",
