@@ -1,9 +1,12 @@
 {
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
-    "target": "es2020",
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "target": "ES6",
+    "lib": [
+      "DOM"
+    ],
+    "outDir": "./src/game",
+    "rootDir": "./src/game",
     "module": "commonjs",
     "preserveConstEnums": true
   },
