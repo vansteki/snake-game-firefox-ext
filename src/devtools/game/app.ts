@@ -11,7 +11,7 @@ function genMap(mapEl: string) {
   const moveWidth: number = Math.floor(document.body.offsetWidth / tileSize);
 
   for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
-    const div: HTMLElement = document.createElement("div", { class: "tile" });
+    const div: HTMLElement = document.createElement("div" as string, { class: "tile" } as ElementCreationOptions);
     div.style.width = tileSize + "px";
     div.style.height = tileSize + "px";
     map.appendChild(div);
@@ -22,7 +22,7 @@ function genMap(mapEl: string) {
   };
 }
 
-function randomApple(appleIndex: number, squares: NodeListOf<HTMLElement>, spawnRules: boolean): void {
+function randomApple(appleIndex: number, squares: NodeListOf<HTMLElement>, spawnRules?: boolean): void {
   const rules: boolean = spawnRules ||
     squares[appleIndex].classList.contains("snake");
   do {
@@ -34,7 +34,7 @@ function randomApple(appleIndex: number, squares: NodeListOf<HTMLElement>, spawn
   }
 }
 
-function randomPineApple(pineAppleIndex: number, squares: NodeListOf<HTMLElement>, spawnRules: boolean): void {
+function randomPineApple(pineAppleIndex: number, squares: NodeListOf<HTMLElement>, spawnRules?: boolean): void {
   const rules: boolean = spawnRules ||
     squares[pineAppleIndex].classList.contains("snake") &&
     squares[pineAppleIndex].classList.contains("apple");
@@ -71,7 +71,7 @@ function initGame() {
       v.classList.remove("pineapple");
       v.classList.remove("apple");
     });
-    clearInterval(interval);
+    clearInterval(interval as number);
     score = 0;
     randomApple(appleIndex, squares);
     randomPineApple(pineAppleIndex, squares);
@@ -94,10 +94,10 @@ function initGame() {
       (currentSnake[0] - moveWidth < 0 && direction === -moveWidth) || // top border collision
       squares[currentSnake[0] + direction].classList.contains("snake") //if snake goes into itself
     ) {
-      return clearInterval(interval); //this will clear the interval if any of the above happen
+      return clearInterval(interval as number); //this will clear the interval if any of the above happen
     }
 
-    const tail = currentSnake.pop(); //removes last ite of the array and shows it
+    const tail: number | undefined = currentSnake.pop(); //removes last ite of the array and shows it
     squares[tail].classList.remove("snake"); //removes class of snake from the TAIL
     currentSnake.unshift(currentSnake[0] + direction); //gives direction to the head of the array
 
@@ -132,17 +132,17 @@ function initGame() {
   function control(e: KeyboardEvent) {
     squares[currentIndex].classList.remove("snake");
 
-    if (e.keyCode === 39) {
-      direction = 1; // right
-    } else if (e.keyCode === 38) {
-      direction = -moveWidth; // up
-    } else if (e.keyCode === 37) {
+    if (e.code === "ArrowRight") {
+      direction = 1;
+    } else if (e.code === "ArrowUp") {
+      direction = -moveWidth;
+    } else if (e.code === "ArrowLeft") {
       direction = -1; // left
-    } else if (e.keyCode === 40) {
-      direction = +moveWidth; // down
+    } else if (e.code === "ArrowDown") {
+      direction = +moveWidth;
     }
 
-    if (e.keyCode === 81) {
+    if (e.code === "KeyQ") {
       startGame();
     }
   }
