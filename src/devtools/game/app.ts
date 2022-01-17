@@ -1,7 +1,3 @@
-import * as events from "events";
-import * as Events from "events";
-import * as EVENTS from "events";
-
 function genMap(mapEl: string) {
   const map = document.querySelector(mapEl) as HTMLElement;
   const tileSize: number = 20;
@@ -33,7 +29,7 @@ function randomApple(appleIndex: number, squares: NodeListOf<HTMLElement>, spawn
     appleIndex = Math.floor(Math.random() * squares.length);
   } while (rules);
   {
-    //making sure apples dont appear on the snake
+    //making sure apples don't appear on the snake
     squares[appleIndex].classList.add("apple");
   }
 }
