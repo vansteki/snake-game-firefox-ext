@@ -1,14 +1,14 @@
 function genMap (mapEl) {
   const map = document.querySelector(mapEl)
-  let tileSize = 20
+  const tileSize = 20
   // row number of each tile based on screen width
-  let tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
+  const tileRowNumbers = Math.floor(document.body.offsetWidth / tileSize)
 
   // generate 1/5 of screen height of column tiles
   const tileColNumbers = Math.floor(window.screen.availHeight / (tileSize * 5))
 
   // width is move offset aka square of each line
-  let moveWidth = Math.floor(document.body.offsetWidth / tileSize)
+  const moveWidth = Math.floor(document.body.offsetWidth / tileSize)
 
   for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
     const div = document.createElement('div', { class: 'tile' })
