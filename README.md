@@ -17,6 +17,7 @@ The the game is based on [kubowania/Nokia3310-Snake](https://github.com/kubowani
 - Re-generate map tiles based on screen size (offsetWidth) 🗺
 - Integrate game into Firefox extension (devtools panel) 🦊
 - Use Tailwind CSS
+- Use TypeScript
 
 screenshot:
 
