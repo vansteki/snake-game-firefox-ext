@@ -7,9 +7,12 @@
     "dev:ff-dev": "web-ext -s ./src run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
     "dev:css": "npx tailwindcss -i src/devtools/game/tailwind-input.css -o ./src/devtools/game/app.css -w",
     "format": "prettier-standard --format",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@tsconfig/node16": "^1.0.2",
     "prettier": "^2.5.1",
     "prettier-standard": "^16.4.1",
     "tailwindcss": "3.0.7",
