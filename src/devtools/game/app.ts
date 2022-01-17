@@ -122,7 +122,7 @@ function initGame() {
 
       score = score + scoreAdded;
       scoreDisplay.textContent = score.toString();
-      clearInterval(interval);
+      clearInterval(interval as number);
       intervalTime = intervalTime * speedAdded;
       interval = setInterval(moveOutcomes, intervalTime);
     }
