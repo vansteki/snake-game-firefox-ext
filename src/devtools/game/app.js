@@ -22,20 +22,25 @@ function genMap (mapEl) {
   }
 }
 
-function randomApple (appleIndex, squares) {
+function randomApple (appleIndex, squares, spawnRules) {
+  const rules = spawnRules ||
+    squares[appleIndex].classList.contains('snake')
   do {
     appleIndex = Math.floor(Math.random() * squares.length)
-  } while (squares[appleIndex].classList.contains('snake'))
+  } while (rules)
   {
     //making sure apples dont appear on the snake
     squares[appleIndex].classList.add('apple')
   }
 }
 
-function randomPineApple (pineAppleIndex, squares) {
+function randomPineApple (pineAppleIndex, squares, spawnRules) {
+  const rules = spawnRules ||
+    squares[pineAppleIndex].classList.contains('snake') &&
+    squares[pineAppleIndex].classList.contains('apple')
   do {
     pineAppleIndex = Math.floor(Math.random() * squares.length)
-  } while (squares[pineAppleIndex].classList.contains('snake') && squares[pineAppleIndex].classList.contains('apple'))
+  } while (rules)
   {
     squares[pineAppleIndex].classList.add('pineapple')
   }
