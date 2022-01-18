@@ -92,24 +92,28 @@ function initGame() {
       (currentSnake[0] % moveWidth === moveWidth - 1 && direction === 1) || // right border collision
       (currentSnake[0] % moveWidth === 0 && direction === -1) || //if left border collision
       (currentSnake[0] - moveWidth < 0 && direction === -moveWidth) || // top border collision
+      squares[currentSnake[0] + direction] !== undefined &&
       squares[currentSnake[0] + direction].classList.contains("snake") //if snake goes into itself
     ) {
       return clearInterval(interval as number); //this will clear the interval if any of the above happen
     }
 
     const tail: number | undefined = currentSnake.pop(); //removes last ite of the array and shows it
-    squares[tail].classList.remove("snake"); //removes class of snake from the TAIL
-    currentSnake.unshift(currentSnake[0] + direction); //gives direction to the head of the array
+    if (tail !== undefined) {
+      squares[tail].classList.remove("snake"); //removes class of snake from the TAIL
+      currentSnake.unshift(currentSnake[0] + direction); //gives direction to the head of the array
 
-    //deals with snake getting apple
-    if (squares[currentSnake[0]].classList.contains("apple")) {
-      whenEat("apple", 1, appleSpeed);
-    } else if (squares[currentSnake[0]].classList.contains("pineapple")) {
-      whenEat("pineapple", 10, pineAppleSpeed);
+      //deals with snake getting apple
+      if (squares[currentSnake[0]].classList.contains("apple")) {
+        whenEat("apple", 1, appleSpeed);
+      } else if (squares[currentSnake[0]].classList.contains("pineapple")) {
+        whenEat("pineapple", 10, pineAppleSpeed);
+      }
+      squares[currentSnake[0]].classList.add("snake");
     }
-    squares[currentSnake[0]].classList.add("snake");
 
     function whenEat(fruit: string, scoreAdded: number, speedAdded: number) {
+      if (tail === undefined) return;
       squares[currentSnake[0]].classList.remove(fruit);
       squares[tail].classList.add("snake");
       currentSnake.push(tail);
