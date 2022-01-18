@@ -1,13 +1,17 @@
 {
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
-    "target": "es2020",
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "target": "ES6",
+    "lib": [
+      "DOM"
+    ],
+    "outDir": "./src/devtools/game",
+    "rootDir": "./src/devtools/game",
     "module": "commonjs",
     "preserveConstEnums": true
   },
   "include": [
+    "src/devtools/game/*",
     "test/**/*"
   ],
   "exclude": [
