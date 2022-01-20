@@ -9,13 +9,14 @@ const options = {
 }
 
 module.exports = {
-  // target: 'web',
+  context: path.join(__dirname, '/'),
   entry: [
     'webpack-plugin-serve/client',
     path.join(__dirname, 'index.js')
   ],
-  'output': {
-    'filename': '[name].pack.js'
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].pack.js'
   },
   'module': {
     'rules': [
