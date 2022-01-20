@@ -7,8 +7,7 @@
     "dev": "web-ext -s ./src run",
     "dev:ff-dev": "web-ext -s ./src run --firefox=/Applications/Firefox\\ Developer\\ Edition.app/Contents/MacOS/firefox",
     "dev:css": "npx tailwindcss -i src/devtools/game/tailwind-input.css -o ./src/devtools/game/app.css -w",
-    "react:build": "webpack",
-    "react:watch": "webpack -w",
+    "dev:wp": "wp --config ./src/devtools/react/webpack.config.js",
     "format": "prettier-standard --format",
     "test": "jest"
   },

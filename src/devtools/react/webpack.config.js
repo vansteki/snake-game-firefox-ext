@@ -1,18 +1,18 @@
 const { WebpackPluginServe: Serve } = require('webpack-plugin-serve')
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const path = require('path')
 
 const options = {
-  // 'host': '127.0.0.1',
+  'host': '127.0.0.1',
   'port': 9999,
-  liveReload:true
+  liveReload: true
 }
 
 module.exports = {
   // target: 'web',
   entry: [
     'webpack-plugin-serve/client',
-    './index.js'
+    path.join(__dirname, 'index.js')
   ],
   'output': {
     'filename': '[name].pack.js'
@@ -36,7 +36,7 @@ module.exports = {
   },
   mode: 'development',
   plugins: [
-    new Serve(options),
+    new Serve(options)
     // new HtmlWebpackPlugin({
     //   title: 'snake game - react',
     //   template: 'index.html'
