@@ -1,4 +1,4 @@
-# deps for react (webpack5)
+# deps for react (webpack5 + webpack-serve by webpack-plugin-serv)
 
 `package.json`
 ```
@@ -23,6 +23,10 @@
 ```
 
 `webpack.config.js`
+
+- live reload
+- watched
+
 ```
 const { WebpackPluginServe: Serve } = require('webpack-plugin-serve')
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
