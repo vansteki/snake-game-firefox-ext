@@ -1,5 +1,8 @@
 module.exports = {
-  content: ['src/devtools/game/index.html', 'src/devtools/game/app.js', 'src/devtools/game/base.css'],
+  content: [
+    "src/devtools/react/index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}"
+  ],
   theme: {
     extend: {}
   },
