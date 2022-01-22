@@ -14,7 +14,7 @@ function handleHidden () {
 /**
  Create a panel, and add listeners for panel show/hide events.
  */
-browser.devtools.panels.create('Snake Game 🐍', '/icons/icon.png', '/devtools/game/index.html').then(newPanel => {
+browser.devtools.panels.create('Snake Game 🐍', '/icons/icon.png', '/devtools/react/dist/index.html').then(newPanel => {
   newPanel.onShown.addListener(handleShown)
   newPanel.onHidden.addListener(handleHidden)
 })
