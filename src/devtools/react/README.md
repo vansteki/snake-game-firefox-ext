@@ -42,7 +42,7 @@ module.exports = {
   context: path.join(__dirname, '/'),
   entry: [
     'webpack-plugin-serve/client',
-    path.join(__dirname, 'index.js')
+    path.join(__dirname, 'index.jsx')
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
