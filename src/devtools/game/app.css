@@ -452,6 +452,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100vw;
 }
 
+.resize {
+  resize: both;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -489,6 +493,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.bg-purple-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
 }
 
 .p-4 {
