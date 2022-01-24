@@ -1,11 +1,14 @@
 import React from 'react'
 import './index.css'
+import Tile from './cmp/Tile'
+import StartBtn from './cmp/StartBtn'
 
 function App () {
   return (
-    <div className="text-3xl font-bold underline">
-      hello ⭐⭐⭐⭐⭐⭐
-    </div>
+    <>
+      <StartBtn />
+      <Tile />
+    </>
   )
 }
 
