@@ -1,5 +1,4 @@
-import React from 'react'
-import './index.css'
+import React, { useEffect, useState } from 'react'
 import Tile from './cmp/Tile'
 import StartBtn from './cmp/StartBtn'
 
