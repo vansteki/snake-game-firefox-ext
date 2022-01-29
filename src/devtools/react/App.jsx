@@ -34,6 +34,19 @@ function initGame () {
 }
 
 function App () {
+  // re-load game when screen resize for regenerate map
+  window.onresize = function () {
+    setTimeout(() => {
+      setTest(document.body.offsetWidth)
+    }, 100)
+  }
+
+  let [test, setTest] = useState(document.body.offsetWidth)
+
+  useEffect(() => {
+    console.log('effect!')
+  }, [test])
+
   return (
     <>
       <StartBtn initGame={initGame} />
