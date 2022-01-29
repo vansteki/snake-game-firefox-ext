@@ -21,6 +21,7 @@ function genMap () {
 
     tiles.push(
       <Tile
+        key={i}
         w={tileSize + 'px'}
         h={tileSize + 'px'}
       />
@@ -29,12 +30,16 @@ function genMap () {
   return tiles
 }
 
+function initGame () {
+  console.log('game start!')
+}
+
 function App () {
   return (
     <>
-      <StartBtn />
+      <StartBtn initGame={initGame} />
       <section className="flex justify-center items-center border-pink-500">
-        <div id="map" className="tile flex flex-wrap w-screen justify-center">
+        <div id="map" className="flex flex-wrap w-screen justify-center">
           {genMap()}
         </div>
       </section>

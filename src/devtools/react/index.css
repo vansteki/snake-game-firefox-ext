@@ -7,7 +7,7 @@ html {
   overflow-x: hidden;
 }
 
-.tile div {
+.tile {
   border: 1px solid darkolivegreen;
 }
 
