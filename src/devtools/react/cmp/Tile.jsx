@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function Tile () {
+export default function Tile (props) {
   return (
-    <>
-      I AM A TILE
-    </>
+    <div
+      className="tile"
+      style={{
+        width: props.w,
+        height: props.h
+      }}
+    >
+    </div>
   )
 }
