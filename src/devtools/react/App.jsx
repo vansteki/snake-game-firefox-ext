@@ -14,9 +14,6 @@ function genMap () {
   const moveWidth = Math.floor(document.body.offsetWidth / tileSize)
 
   for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
-    // const div = document.createElement('div', { class: 'tile' })
-    // div.style.width = tileSize + 'px'
-    // div.style.height = tileSize + 'px'
 
     tiles.push(
       <Tile
