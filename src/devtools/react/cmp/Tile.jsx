@@ -4,17 +4,25 @@ Tile.defaultProps = {
   width: '10px',
   height: '10px',
   index: 0,
-  color: null
+  currentSnake: []
 }
 
 function Tile (props) {
+
+  let color = 'none'
+  let { index, currentSnake } = props
+
+  if (currentSnake.includes(index)) {
+    color = 'blue'
+  }
+
   return (
     <div
       className="tile"
       style={{
         width: props.w,
         height: props.h,
-        backgroundColor: props.color
+        backgroundColor: color
       }}
     >
     </div>

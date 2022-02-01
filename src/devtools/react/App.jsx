@@ -8,6 +8,9 @@ function initGame () {
 }
 
 function App () {
+
+  let [currentSnake, setCurrentSnake] = useState([0,1,2])
+
   // re-load game when screen resize for regenerate map
   window.onresize = function () {
     setTimeout(() => {
@@ -32,6 +35,7 @@ function App () {
           index={i}
           w={tileWidth}
           h={tileHeight}
+          currentSnake={currentSnake}
         />
       )
     }
