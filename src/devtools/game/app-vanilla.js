@@ -53,7 +53,6 @@ function initGame () {
   const startBtn = document.querySelector('.start')
   const initialSpeed = 100
 
-  let currentIndex = 0 //so first div in our grid
   let appleIndex = 0 //so first div in our grid
   let pineAppleIndex = 0
   let currentSnake = [2, 1, 0]
@@ -79,7 +78,6 @@ function initGame () {
     scoreDisplay.innerText = score
     intervalTime = initialSpeed
     currentSnake = [2, 1, 0]
-    currentIndex = 0
     currentSnake.forEach(index => squares[index].classList.add('snake'))
     interval = setInterval(moveOutcomes, intervalTime)
   }
@@ -130,7 +128,6 @@ function initGame () {
 
   //assign functions to keycodes
   function control (e) {
-    squares[currentIndex].classList.remove('snake')
 
     if (e.keyCode === 39) {
       direction = 1 // right
