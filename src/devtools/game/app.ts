@@ -87,6 +87,9 @@ function initGame() {
   //function that deals with ALL the ove outcomes of the Snake
   function moveOutcomes() {
     //deals with snake hitting border and snake hitting self
+    if (squares[currentSnake[0] + direction] === undefined) {
+      return clearInterval(interval as number); // prevent snake git bottom won't close game issue
+    }
     if (
       (currentSnake[0] + moveWidth >= moveWidth * moveWidth && direction === moveWidth) || // bottom border collision
       (currentSnake[0] % moveWidth === moveWidth - 1 && direction === 1) || // right border collision
