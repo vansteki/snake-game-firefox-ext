@@ -13,11 +13,12 @@ function genMap () {
   // width is move offset aka square of each line
   const moveWidth = Math.floor(document.body.offsetWidth / tileSize)
 
-  for (let i = 1; i <= tileRowNumbers * tileColNumbers; i++) {
+  for (let i = 0; i < tileRowNumbers * tileColNumbers; i++) {
 
     tiles.push(
       <Tile
         key={i}
+        index={i}
         w={tileSize + 'px'}
         h={tileSize + 'px'}
       />

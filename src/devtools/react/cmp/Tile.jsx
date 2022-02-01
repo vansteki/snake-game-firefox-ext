@@ -1,9 +1,10 @@
 import React from 'react'
 
 Tile.defaultProps = {
-  width: "10px",
-  height: "10px",
-  color: "none",
+  width: '10px',
+  height: '10px',
+  index: 0,
+  color: null
 }
 
 function Tile (props) {
@@ -19,6 +20,5 @@ function Tile (props) {
     </div>
   )
 }
-
 
 export default Tile
