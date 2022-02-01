@@ -13,7 +13,7 @@ function Tile (props) {
   let { index, currentSnake } = props
 
   if (currentSnake.includes(index)) {
-    color = 'blue'
+    color = 'dodgerblue'
   }
 
   return (

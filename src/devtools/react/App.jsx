@@ -9,6 +9,8 @@ function initGame () {
 
 function App () {
 
+  // let [currentIndex, setCurrentIndex] = useState(0)
+  let [direction, setDirection] = useState(1)
   let [currentSnake, setCurrentSnake] = useState([0,1,2])
 
   // re-load game when screen resize for regenerate map
