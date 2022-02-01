@@ -53,7 +53,6 @@ function initGame() {
   const startBtn = document.querySelector(".start") as HTMLElement;
   const initialSpeed: number = 100;
 
-  let currentIndex: number = 0; //so first div in our grid
   let appleIndex: number = 0; //so first div in our grid
   let pineAppleIndex: number = 0;
   let currentSnake: number[] = [2, 1, 0];
@@ -79,7 +78,6 @@ function initGame() {
     scoreDisplay.innerText = score.toString();
     intervalTime = initialSpeed;
     currentSnake = [2, 1, 0];
-    currentIndex = 0;
     currentSnake.forEach(index => squares[index].classList.add("snake"));
     interval = setInterval(moveOutcomes, intervalTime);
   }
@@ -133,7 +131,6 @@ function initGame() {
 
   //assign functions to keycodes
   function control(e: KeyboardEvent) {
-    squares[currentIndex].classList.remove("snake");
 
     if (e.code === "ArrowRight") {
       direction = 1;
