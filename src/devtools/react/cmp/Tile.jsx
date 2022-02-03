@@ -9,15 +9,8 @@ Tile.defaultProps = {
 
 function Tile (props) {
 
-  let color = null
   let { index, currentSnake } = props
-
-  if (currentSnake.includes(index)) {
-    console.log(currentSnake, index)
-    color = 'dodgerblue'
-  } else {
-    color = null
-  }
+  let color = currentSnake.includes(index) ? 'dodgerblue' : null
 
   return (
     <div
